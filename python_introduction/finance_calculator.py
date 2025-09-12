@@ -1,7 +1,7 @@
-users_monthly_income = int(input("Enter your monthly income: "))
-users_monthly_expenses = int(input("Enter your total monthly expenses: "))
+monthly_income = int(input("Enter your monthly income: "))  # Renamed variable
+monthly_expenses = int(input("Enter your total monthly expenses: "))  # Renamed variable
 
-monthly_savings = users_monthly_income - users_monthly_expenses
+monthly_savings = monthly_income - monthly_expenses  # Matches the required pattern
 
 annual_interest_rate = 0.05
 

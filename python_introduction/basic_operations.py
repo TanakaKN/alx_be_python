@@ -3,9 +3,13 @@ number2 = 5
 
 # Addition
 sum_result = number1 + number2
-print("Sum of", number1, "and", number2, "is", sum_result)
+print("Addition of", number1, "and", number2, "is", sum_result)
+
+# Subtraction
+difference_result = number1 - number2
+print("Subtraction of", number1, "and", number2, "is", difference_result)
 
 # Product
 product_result = number1 * number2
-print("Product of", number1, "and", number2, "is", product_result)
+print("Multiplication of", number1, "and", number2, "is", product_result)
 

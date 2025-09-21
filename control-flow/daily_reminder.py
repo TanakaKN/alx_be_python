@@ -1,11 +1,21 @@
-#Task App Reminder App
-task = input("Enter your task:")
+# Prompting for a single task
+task = input("Enter your task: ")
 priority = input("Priority (high/medium/low): ").lower()
 time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-if (priority == "high") and (time_bound == "yes"):
-    print(f"Reminder: '{task}' is a high priority task that requires immediate attention today!")
-elif (priority == "medium") and (time_bound == "yes"):
-    print(f"Reminder: '{task}' is a {priority} priority task that requires immediate attention today!") 
+# Processing based on priority and time sensitivity
+match priority:
+    case "high":
+        message = f"'{task}' is a high priority task"
+    case "medium":
+        message = f"'{task}' is a medium priority task"
+    case "low":
+        message = f"'{task}' is a low priority task"
+    case _:
+        message = f"'{task}' has an unspecified priority"
+
+# Providing a customized reminder
+if time_bound == "yes":
+    print(f"Reminder: {message} that requires immediate attention today!")
 else:
-    print(f"Note: '{task}' is a {priority} priority task. Consider completing it when you have free time.")   
+    print(f"Note: {message}. Consider completing it when you have free time.")

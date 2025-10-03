@@ -1,4 +1,4 @@
-class SimpleCalculate:
+class SimpleCalculator:
     print("A simple calculator class that supports basic arithmetic operations.")
 
     def add(a, b):

@@ -1,24 +1,28 @@
-from simple_calculator import SimpleCalculate
+from simple_calculator import SimpleCalculator
 import unittest
 
-class test_simple_calculator(unittest.TestCase):
-    
+class TestSimpleCalculator(unittest.TestCase):
+
+    def setUp(self):
+        """Set up the SimpleCalculator instance before each test."""
+        self.calc = SimpleCalculator()
+
     def test_add(self):
-        self.assertEqual(SimpleCalculate.add(4, 4), 8)
-        self.assertEqual(SimpleCalculate.add(0, 4), 4)
-        self.assertEqual(SimpleCalculate.add(5, 1), 6)
+        self.assertEqual(self.calc.add(4, 4), 8)
+        self.assertEqual(self.calc.add(0, 4), 4)
+        self.assertEqual(self.calc.add(5, 1), 6)
 
     def test_substrate(self):
-        self.assertEqual(SimpleCalculate.subtract(0, 4), 4)
-        self.assertEqual(SimpleCalculate.subtract(4, 4), 0) 
-        self.assertEqual(SimpleCalculate.subtract(5, 4), 1) 
+        self.assertEqual(self.calc.subtract(4, 0), 4)
+        self.assertEqual(self.calc.subtract(4, 4), 0) 
+        self.assertEqual(self.calc.subtract(5, 4), 1) 
 
     def test_multiply(self):
-        self.assertEqual(SimpleCalculate.multiply(0, 4), 4)
-        self.assertEqual(SimpleCalculate.multiply(4, 4), 0) 
-        self.assertEqual(SimpleCalculate.multiply(5, 4), 1) 
+        self.assertEqual(self.calc.multiply(0, 4), 0)
+        self.assertEqual(self.calc.multiply(4, 4), 16) 
+        self.assertEqual(self.calc.multiply(5, 4), 20) 
 
     def test_divide(self):
-        self.assertEqual(SimpleCalculate.divide(4, 4), 1)
-        self.assertEqual(SimpleCalculate.divide(16, 4), 4)  
-        self.assertEqual(SimpleCalculate.divide(4, 0), "Error: Cannot divide by zero.")                
+        self.assertEqual(self.calc.divide(4, 4), 1)
+        self.assertEqual(self.calc.divide(16, 4), 4)  
+        self.assertEqual(self.calc.divide(4, 0), "Error: Cannot divide by zero.")                

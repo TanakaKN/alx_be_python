@@ -5,7 +5,6 @@ import math
 # Base class
 class Shape:
     def area(self):
-        # This ensures that subclasses must override this method
         raise NotImplementedError("Subclasses must implement the area() method")
 
 
@@ -28,9 +27,10 @@ class Circle(Shape):
         return math.pi * (self.radius ** 2)
 
 
-# Demonstration
-rectangle = Rectangle(10, 5)
-circle = Circle(7)
+# Only run this demo code when executed directly, not on import
+if __name__ == "__main__":
+    rectangle = Rectangle(10, 5)
+    circle = Circle(7)
 
-print(f"The area of the Rectangle is: {rectangle.area()}")
-print(f"The area of the Circle is: {circle.area()}")
+    print(f"The area of the Rectangle is: {rectangle.area()}")
+    print(f"The area of the Circle is: {circle.area()}")
